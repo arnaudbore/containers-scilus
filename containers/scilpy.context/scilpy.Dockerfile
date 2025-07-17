@@ -19,6 +19,12 @@ ENV LC_ALL="en_US.UTF-8"
 ENV LANG="en_US.UTF-8"
 ENV LANGUAGE="en_US.UTF-8"
 
+# Set up Numba cache
+# https://github.com/numba/numba/issues/4032
+WORKDIR /
+ENV NUMBA_CACHE_DIR=/numba_cache
+RUN mkdir $NUMBA_CACHE_DIR && chmod 777 $NUMBA_CACHE_DIR
+
 ENV SETUPTOOLS_USE_DISTUTILS=stdlib
 
 WORKDIR /
@@ -61,3 +67,7 @@ RUN sed -i '41s/.*/backend : Agg/' /usr/local/lib/python${PYTHON_VERSION}/dist-p
 WORKDIR /
 RUN ( [ -f "VERSION" ] || touch VERSION ) && \
     echo "Scilpy => ${SCILPY_REVISION}\n" >> VERSION
+
+WORKDIR /
+RUN mkdir -p /etc/OpenCL/vendors && \
+    echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd

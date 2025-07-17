@@ -1,6 +1,6 @@
 # scilus-versioning.hcl
 
-base-install-image="nvidia/cuda:12.6.3-runtime-ubuntu22.04"
+base-install-image="nvidia/cuda:12.6.3-base-ubuntu22.04"
 base-build-image="ubuntu:jammy-20230301"
 
 actions-runner-version="2.319.1"
