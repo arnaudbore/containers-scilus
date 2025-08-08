@@ -49,11 +49,11 @@ variable "mesa-version" {
 }
 
 variable "vtk-version" {
-    default = "8.2.0"
+    default = "9.3.1"
 }
 
 variable "python-version" {
-    default = "3.10"
+    default = "3.12"
 }
 
 variable "nextflow-version" {

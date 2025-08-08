@@ -15,7 +15,7 @@ fsl-installer-version="3.14.0"
 mrtrix-revision="3.0.4"
 mesa-version="23.1.0"
 vtk-version="9.2.6"
-python-version="3.10"
+python-version="3.12"
 
 java-version="11"
 nextflow-version="21.04.3"
